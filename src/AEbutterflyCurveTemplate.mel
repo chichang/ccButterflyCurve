@@ -1,0 +1,25 @@
+global proc AEbutterflyCurveTemplate( string $nodeName )
+{
+    editorTemplate -beginScrollLayout;
+ 
+    editorTemplate -beginLayout "Curve Settings" -collapse 0;
+        editorTemplate -addControl "skipBy";
+        //AEaddRampControl ($nodeName + ".rampAttribute");
+    editorTemplate -endLayout;
+ 
+     editorTemplate -beginLayout "Curve Attributes" -collapse 0;
+        editorTemplate -addControl "timesRound";
+        editorTemplate -addControl "thetaMultA";
+        editorTemplate -addControl "thetaMultB";
+        editorTemplate -addControl "thetaMultC";
+        editorTemplate -addControl "cosinMult";
+        editorTemplate -addControl "sinPower";
+        editorTemplate -addControl "zOffset";
+        //AEaddRampControl ($nodeName + ".rampAttribute");
+    editorTemplate -endLayout;
+
+    AEdependNodeTemplate $nodeName;
+ 
+    editorTemplate -addExtraControls;
+    editorTemplate -endScrollLayout;
+}
